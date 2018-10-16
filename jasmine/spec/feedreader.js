@@ -43,6 +43,13 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('name is defined and not empty', function() {
+            for (var item of allFeeds) {
+                expect(item.name).toBeDefined();
+                expect(item.name).not.toBe('');
+                console.log(item.name);
+            }
+        });
     });
 
 
