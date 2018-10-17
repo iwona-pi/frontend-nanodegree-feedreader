@@ -101,6 +101,7 @@ $(function() {
     describe("Initial Entries", () => {
         beforeEach(function (done) {
                 loadFeed(0, done);
+                
             });
 
         /* TODO: Write a test that ensures when the loadFeed
@@ -109,13 +110,15 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-
-        it("loadFedd function is called", () => {
+         console.log($('div.feed >a > .entry'));
+        it("there is at least a single .entry element", () => {
+            f = $('div.feed > > .entry');
+            console.log($('div.feed > > .entry'));
+            expect(f.length).toBeGreaterThan(0);
 
             
 
-            spyOn(allFeeds, 'loadFedd');
-            expect('loadFedd').toHaveBeenCalled();
+            
         })
     })
     /* TODO: Write a new test suite named "New Feed Selection" */
