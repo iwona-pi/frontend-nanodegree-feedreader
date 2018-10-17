@@ -67,14 +67,41 @@ $(function() {
             // expect(d).toHaveClass('menu-hidden');
             expect($('body').hasClass("menu-hidden")).toBe(true);
             console.log($('.menu-hidden'));
-        }) 
+
+        });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-    })
+
+        it('changes visibility when the menu icon is clicked', () => {
+            const b = function() {
+                let d = document.querySelector("body").className;
+                return d;
+            };
+
+            c = b();
+            menuIcon = $('.menu-icon-link');
+            console.log(b());
+            menuIcon.click();
+            expect($('body').hasClass(c)).toBe(false);
+
+            // c = document.querySelector("body").className;
+
+            d = b();
+            console.log(b());
+            menuIcon.click();
+            expect($('body').hasClass(d)).toBe(false);
+
+
+        });
+    });
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe("Initial Entries", () => {
+        beforeEach(function (done) {
+                loadFeed(0, done);
+            });
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -83,6 +110,14 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        it("loadFedd function is called", () => {
+
+            
+
+            spyOn(allFeeds, 'loadFedd');
+            expect('loadFedd').toHaveBeenCalled();
+        })
+    })
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
