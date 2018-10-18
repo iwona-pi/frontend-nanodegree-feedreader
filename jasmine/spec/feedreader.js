@@ -30,7 +30,6 @@ $(function() {
             for (var item of allFeeds) {
                 expect(item.url).toBeDefined();
                 expect(item.url).not.toBe('');
-                console.log(item.url);
             }
         });
 
@@ -42,7 +41,6 @@ $(function() {
             for (var item of allFeeds) {
                 expect(item.name).toBeDefined();
                 expect(item.name).not.toBe('');
-                console.log(item.name);
             }
         });
     });
@@ -117,11 +115,11 @@ $(function() {
             beforeEach(function (done) {
                 loadFeed(3, function() {
                     s = document.querySelector(".header-title").textContent;
-                    console.log(s); 
+                    //console.log(s); 
                  
                     loadFeed(2, function() {
                         w = document.querySelector(".header-title").textContent;
-                        console.log(w);
+                        //console.log(w);
                  
                             done();          
                     });
