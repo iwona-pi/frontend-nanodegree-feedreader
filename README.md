@@ -11,5 +11,8 @@ Testing is an important part of the development process and many organizations p
 * Just clone this repository or download ZIP file.
 * Project contains Jasmine 2.1.2 version.
 * All needed library are also included.
-* Test suites are in jasmine/spec/feedreader.js file.
+* Test suites are in **./jasmine/spec/feedreader.js** file.
+* When you load the **index.html** file all tests should pass.
+
+Tests drives some functionality in HTML, Java Script, CSS code as well as the event handling and DOM manipulation. After you analyzed code application you can manipualte the data in **/feedreader.js** file, especially in async function, to check if other elements pass test. 
 
