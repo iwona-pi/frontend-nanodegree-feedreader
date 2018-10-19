@@ -66,16 +66,17 @@ $(function() {
         it('changes visibility when the menu icon is clicked', () => {
             
             //Function allow to find what is body's class.
+            
             const b = function() {
-                let d = document.querySelector("body").className;
+                let d = document.querySelector("body").classList;
                 return d;
             };
 
             //Calling this function we know the name of the body's class
             //before clicking.
-            c = b();
+            let c = b().item(0);
             menuIcon = $('.menu-icon-link');
-            //console.log(b());
+            //console.log(c);
             
             //Simulation of clicking on "menu-icon" element.
             menuIcon.click();
@@ -83,10 +84,10 @@ $(function() {
             //the class changed and there is no "menu-hidden" class
 
             //again we want to have actual name of the body's class
-            d = b();
-            //console.log(b());
+            let e = b().item(0);
+            //console.log(e);
             menuIcon.click();
-            expect($('body').hasClass(d)).toBe(false);//after second click
+            expect($('body').hasClass(e)).toBe(false);//after second click
             //we see the body's class changed and back to start position
         });
     });
@@ -114,11 +115,11 @@ $(function() {
             //is equal changed page content.
             beforeEach(function (done) {
                 loadFeed(3, function() {
-                    s = document.querySelector(".header-title").textContent;
+                    let s = document.querySelector(".header-title").textContent;
                     //console.log(s); 
                  
                     loadFeed(2, function() {
-                        w = document.querySelector(".header-title").textContent;
+                        let w = document.querySelector(".header-title").textContent;
                         //console.log(w);
                  
                             done();          
